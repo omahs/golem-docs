@@ -1,6 +1,6 @@
 ---
-title: Using Golem images
-description: Examples of how to use your own Golem image in a requestor script
+Title: Using Golem images
+Description: Examples of how to use your own Golem image in a requestor script
 ---
 
 # Using Golem images
@@ -18,16 +18,16 @@ import { TaskExecutor } from "yajsapi";
 
 (async () => {
 
-	const executor = await TaskExecutor.create({
-    		package: "529f7fdaf1cf46ce3126eb6bbcd3b213c314fe8fe884914f5d1106d4",    
-		yagnaOptions: { appKey: 'try_golem' }});
-	
-	const result = await executor.run(
-		async (ctx) => (await ctx.run("node -v")).stdout);
-	
-	await executor.end();
-	
-	console.log("Task result:", result);
+    const executor = await TaskExecutor.create({
+            package: "529f7fdaf1cf46ce3126eb6bbcd3b213c314fe8fe884914f5d1106d4",    
+        yagnaOptions: { appKey: 'try_golem' }});
+    
+    const result = await executor.run(
+        async (ctx) => (await ctx.run("node -v")).stdout);
+    
+    await executor.end();
+    
+    console.log("Task result:", result);
 
 })();
 ```
@@ -36,9 +36,9 @@ Note the `529f7fdaf1cf46ce3126eb6bbcd3b213c314fe8fe884914f5d1106d4` hash in the 
 
 
 ```js
-	const executor = await TaskExecutor.create({
-    		package: "529f7fdaf1cf46ce3126eb6bbcd3b213c314fe8fe884914f5d1106d4",    
-		yagnaOptions: { appKey: 'try_golem' }});
+    const executor = await TaskExecutor.create({
+            package: "529f7fdaf1cf46ce3126eb6bbcd3b213c314fe8fe884914f5d1106d4",    
+        yagnaOptions: { appKey: 'try_golem' }});
 ```
 
 If you had created your custom Golem image and published it to the repository, you can simply replace the hash (`529 [...] 1106d4`) in the script with the hash generated for your image by gvmkit-build tool or with your own defined tag.
@@ -57,4 +57,4 @@ package: "golem/my_example:latest",
 
     [Custom Golem image creation step by step tutorial](../tutorials/image.md){ .md-button .md-button--primary }
  
-	Note: more information can be found in the [golemfactory/gvmkit-build-rs repository](https://github.com/golemfactory/gvmkit-build-rs).
+    Note: More information can be found in the [golemfactory/gvmkit-build-rs repository](https://github.com/golemfactory/gvmkit-build-rs).

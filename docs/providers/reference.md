@@ -1,6 +1,6 @@
 ---
-title: Provider CLI reference
-description: Yagna CLI reference
+Title: Provider CLI reference
+Description: Yagna CLI reference
 ---
 
 # Provider CLI reference
@@ -12,7 +12,7 @@ Run `golemsp help` without arguments to see top-level usage information:
 ```bash
 $ golemsp help
 golemsp 0.12.2 (8efd8657 2023-06-06 build #296)
-User friedly CLI for running Golem Provider
+User-friendly CLI for running Golem Provider
 
 USAGE:
     golemsp <SUBCOMMAND>
@@ -88,7 +88,7 @@ OPTIONS:
 
 ```
 
-In order to change a particular setting (for eg. price settings) type:
+To change a particular setting (for eg. price settings) type:
 
 `golemsp settings set --cpu-per-hour 3`
 
@@ -100,7 +100,7 @@ You can also combine multiple settings in one command as follows:
 
 `golemsp settings set --account <address>`
 
-and restart your node afterwards for it to update. To check if your address has been updated properly run `golemsp status`
+and restart your node afterward for it to update. To check if your address has been updated properly run `golemsp status`
 
 #### Settings show
 
@@ -112,23 +112,23 @@ example
 $ golemsp settings show
 node name: "zima"
 Shared resources:
-	cores:	7
-	memory:	10.604358091950417 GiB
-	disk:	59.39304809570313 GiB
+    cores:  7
+    memory: 10.604358091950417 GiB
+    disk:   59.39304809570313 GiB
 
 
 Pricing for preset "vm":
 
-	0.025000000000000001 GLM per cpu hour
-	0.005000000000000000 GLM per hour
-	0.000000000000000000 GLM for start
+    0.025000000000000001 GLM per cpu hour
+    0.005000000000000000 GLM per hour
+    0.000000000000000000 GLM for start
 
 
 Pricing for preset "wasmtime":
 
-	0.025000000000000001 GLM per cpu hour
-	0.005000000000000000 GLM per hour
-	0.000000000000000000 GLM for start
+    0.025000000000000001 GLM per cpu hour
+    0.005000000000000000 GLM per hour
+    0.000000000000000000 GLM for start
 
 ```
 
@@ -181,7 +181,7 @@ In the three columns, you can check the basic information regarding the status o
 #### Status
 
 * Whether your node is running
-* Version of your node (with commit, build date and build number)
+* Version of your node (with commit, build date, and build number)
 * Name of your node
 * Subnet in which your node is currently running
 * VM status
@@ -194,17 +194,17 @@ In the three columns, you can check the basic information regarding the status o
 * On-chain amount of tokens that you have earned (explorer [etherscan.io](https://etherscan.io/) or [rinkeby.etherscan.io](https://rinkeby.etherscan.io/))
 * Zk-sync amount of tokens that you have earned (explorer [zkscan.io](https://zkscan.io) or [rinkeby.zkscan.io](https://rinkeby.zkscan.io/))
 * Pending payments that you should receive for computation
-* Amount of tokens that is still unconfirmed and may not show on your account
+* Amount of tokens that are still unconfirmed and may not show on your account
 
 #### Tasks
 
-* Number of tasks that you were computing in last hour
+* Number of tasks that you were computing in the last hour
 * Number of tasks that were in progress during the last hour
-* Total task that you were trying to compute - including those that were not computed
+* Total tasks that you were trying to compute - including those that were not computed
 
 ### Exit GLM tokens to Ethereum
 
-While not specific to the provider CLI, at some point you may want to move your tokens. By default, mainnet tasks are paid on Layer 2. Assuming you have a local wallet, you can interact with the payment driver to exit your tokens from Layer 2 to Layer 1. This is done using the`yagna payment exit` command. With this command there are two main flags to keep in mind; `--network`and `--to-address`.
+While not specific to the provider CLI, at some point, you may want to move your tokens. By default, mainnet tasks are paid on Layer 2. Assuming you have a local wallet, you can interact with the payment driver to exit your tokens from Layer 2 to Layer 1. This is done using the`yagna payment exit` command. With this command, there are two main flags to keep in mind; `--network`and `--to-address`.
 
 For `--network`you have two options, either `mainnet` or `rinkeby`. For `--to-address`you can specify a destination address other than the local wallet address.
 
@@ -216,24 +216,24 @@ For `--network`you have two options, either `mainnet` or `rinkeby`. For `--to-ad
 
 `yagna payment exit --to-address=<address> --network=mainnet`
 
-**Note that if you decided to use an external wallet during your setup process, you can connect to ZkSync's wallet at** [**https://wallet.zksync.io/**](https://wallet.zksync.io/) **and exit that way. In the scenario that a different payment driver is being used, you will need to use the relevant available options to connect and access your tokens.**
+**Note that if you decide to use an external wallet during your setup process, you can connect to ZkSync's wallet at** [**https://wallet.zksync.io/**](https://wallet.zksync.io/) **and exit that way. In the scenario that a different payment driver is being used, you will need to use the relevant available options to connect and access your tokens.**
 
 ## Advanced Settings
 
-`ya-provider` allows to fine-tune the config created with `golemsp settings` using commands `config`, `preset`, `profile`, and `exe-unit`.
+`ya-provider` allows fine-tuning the config created with `golemsp settings` using commands `config`, `preset`, `profile`, and `exe-unit`.
 
-Additionally, it enables configuration of the certificate keystore and of the domain whitelist, which are used to control what kind of outbound traffic is allowed out of the VM containers run by the requestors on your machine.
+Additionally, it enables configuration of the certificate keystore and of the domain whitelist, which is used to control what kind of outbound traffic is allowed out of the VM containers run by the requestors on your machine.
 
 ### Keystore
 
 The provider has an embedded certificate keystore which is used to validate any additional permissions for the payload launched by the requestors.
 
-By default it contains only Golem public certificate which allows to execute [example app](https://handbook.golem.network/requestor-tutorials/service-development/service-example-6-external-api-request) and apps from trusted by Golem creators (certificates allow to verify incoming _Demand_'s [Computational Payload Manifests](https://handbook.golem.network/requestor-tutorials/vm-runtime/computation-payload-manifest)).
+By default, it contains only Golem public certificate which allows executing [example app](https://handbook.golem.network/requestor-tutorials/service-development/service-example-6-external-api-request) and apps from trusted by Golem creators (certificates allow to verify incoming _Demand_'s [Computational Payload Manifests](https://handbook.golem.network/requestor-tutorials/vm-runtime/computation-payload-manifest)).
 
 Run `ya-provider keystore --help` to see possible subcommands
 
 ### Domain whitelist
 
-The [Computational Payload Manifests](https://handbook.golem.network/requestor-tutorials/vm-runtime/computation-payload-manifest) embedded in the Demands can specify a list of URLs which may get called by the services running on a Provider. If the manifest declares requests to URLs in domains that are not whitelisted, it must come with a [signature and app author's public certificate](https://handbook.golem.network/requestor-tutorials/vm-runtime/computation-payload-manifest). By default, the domains `whitelist` consists of a curated set of public websites and APIs like github, dockerhub or public Ethereum nodes.
+The [Computational Payload Manifests](https://handbook.golem.network/requestor-tutorials/vm-runtime/computation-payload-manifest) embedded in the Demands can specify a list of URLs that may get called by the services running on a Provider. If the manifest declares requests to URLs in domains that are not whitelisted, it must come with a [signature and app author's public certificate](https://handbook.golem.network/requestor-tutorials/vm-runtime/computation-payload-manifest). By default, the domains `whitelist` consists of a curated set of public websites and APIs like GitHub, dockerhub or public Ethereum nodes.
 
-Run `ya-provider whitelist --help` to see possible subcommands
+Run `ya-provider whitelist --help` to see possible subcommands.

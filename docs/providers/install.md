@@ -1,5 +1,5 @@
 ---
-title: Yagna installation for providers
+Title: Yagna installation for providers
 description: 
 ---
 
@@ -27,11 +27,11 @@ Node name (default=generated-name): - Type in the name of your new node and pres
 
 Ethereum wallet address (default=internal wallet): - Paste your own Ethereum address to which you have private keys stored. If you leave this space empty, an address will be created for you on your local system.
 
-price GLM per hour (default=0.1): - Type in the value of renting your computer power as a provider. You can use default price (0.1 GLM per hour) by leaving this field empty. This command shows up only when running GolemSP for the first time.
+price GLM per hour (default=0.1): - Type in the value of renting your computer power as a provider. You can use the default price (0.1 GLM per hour) by leaving this field empty. This command shows up only when running GolemSP for the first time.
 
 ### Modifying your PATH
 
-You might be asked to modify your PATH afterwards for future terminal sessions:
+You might be asked to modify your PATH afterward for future terminal sessions:
 
 ```bash
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
@@ -70,13 +70,13 @@ golemsp run --payment-network testnet
 
 ## Verifying node status
 
-To check your node's status and see if it is active and actually computing tasks from the network, open a new terminal window and type:
+To check your node's status and see if it is active and computing tasks from the network, open a new terminal window and type:
 
 ```bash
 golemsp status
 ```
 
-As an output you will get the information about your node's current state as shown below:
+As an output, you will get the information about your node's current state as shown below:
 
 ```bash
 $ golemsp status

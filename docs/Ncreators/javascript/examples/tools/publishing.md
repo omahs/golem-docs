@@ -1,6 +1,6 @@
 ---
-title: Publishing an image
-description: Guide on how to publish a Golem image to the registry using gvmkit-build
+Title: Publishing an image
+Description: Guide on how to publish a Golem image to the registry using gvmkit-build
 ---
 
 # Publishing an image in the registry (identified by tag)
@@ -16,15 +16,15 @@ description: Guide on how to publish a Golem image to the registry using gvmkit-
     * Have [gvmkit-build installed](installing-gvmkit-build.md) 
 -->
 
-Note: you can also use npx / pipx tools to run gvmkit-build, the former for not having to install the tool, and the latter for isolation.
+Note: You can also use npx / pipx tools to run gvmkit-build, the former for not having to install the tool and the latter for isolation.
     
 
 
 ## Publishing custom Golem image to the registry (tag-based)
 
-Note: Golem image tags have a format of `username/repository_name:tag`, where `username` is your login to registry portal, `repository_name` is name of your repository and `tag` is a text that you chose to describe the content/version of the image. The `tag` can be `latest` to constantly keep a latest version, or you can use a versioning system and e.g. make it `v0.0.1` and so on.
+Note: Golem image tags have a format of `username/repository_name:tag`, where `username` is your login to the registry portal, `repository_name` is the name of your repository, and `tag` is a text that you chose to describe the content/version of the image. The `tag` can be `latest` to constantly keep the latest version, or you can use a versioning system and e.g. make it `v0.0.1` and so on.
 
-Let's assume for this example you username is `golem`, your Docker image is tagged `golem-example`, your repository name is `my_example` and the version is `latest`.
+Let's assume for this example your username is `golem`, your Docker image is tagged `golem-example`, your repository name is `my_example` and the version is `latest`.
 
 
 1. Create an account on the [registry portal](https://registry.golem.network/).
@@ -57,4 +57,4 @@ Your tag `golem/my_example:latest` is ready to use in one of Golem Network APIs
 
     [Using an image in a requestor script](../images.md){ .md-button .md-button--primary }
 
-    Note: more information can be found in the [golemfactory/gvmkit-build-rs repository](https://github.com/golemfactory/gvmkit-build-rs).
+    Note: More information can be found in the [golemfactory/gvmkit-build-rs repository](https://github.com/golemfactory/gvmkit-build-rs).

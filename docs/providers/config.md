@@ -1,5 +1,5 @@
 ---
-description: Configuration examples for yagna
+Description: Configuration examples for Yagna
 ---
 
 # Configuration examples for yagna
@@ -59,7 +59,7 @@ OPTIONS:
 
 ```
 
-In order to change a particular setting (for eg. price settings) type:
+To change a particular setting (for eg. price settings) type:
 
 `golemsp settings set --cpu-per-hour 3`
 
@@ -71,7 +71,7 @@ You can also combine multiple settings in one command as follows:
 
 `golemsp settings set --account <address>`
 
-and restart your node afterwards for it to update. To check if your address has been updated properly run `golemsp status`
+and restart your node afterward for it to update. To check if your address has been updated properly run `golemsp status`
 
 ### Settings show
 

@@ -1,18 +1,18 @@
 ---
-description: Golem in browser QuickStart explained
+Description: Golem in browser QuickStart explained
 ---
 
 !!! info
 
-    In this tutorial you will create a simple web page that will trigger your requestor script and display the results and output logs in the browser window. 
+    In this tutorial, you will create a simple web page that will trigger your requestor script and display the results and output logs in the browser window. 
 
-    While the in the QuickStart the js script is in external file in this tutorial we will both HTML and js script in the same file.  
+    While in the QuickStart the js script is in an external file, in this tutorial we will keep both HTML and js script in the same file.  
 
 ## Prerequisites
 
-Before getting started, you need to install and launch the Yagna daemon in version 0.13.0+. Note such version is available as `release candidate`. It can be installed using instructions for manual Yagna installation available [here](../examples/tools/install_yagna.md). 
+Before getting started, you need to install and launch the Yagna daemon in version 0.13.0+. Note such a version is available as a `release candidate`. It can be installed using instructions for manual Yagna installation available [here](../examples/tools/install_yagna.md). 
 
-In addition you need to start Yagna with a parameter that allows you to handle REST API requests with a CORS policy. You can do this by running the following command:
+In addition, you need to start Yagna with a parameter that allows you to handle REST API requests with a CORS policy. You can do this by running the following command:
 
 
 === "MacOS / Linux"
@@ -29,7 +29,7 @@ In addition you need to start Yagna with a parameter that allows you to handle R
     ```
 
 The `--api-allow-origin` value should be set to the URL where your web application will be served.
-In this examples we will use `http-server`.
+In this example, we will use `http-server`.
 
 ## Setting up project
 
@@ -81,7 +81,7 @@ Note the `<script>` tag in the `<head>` section  - here we will place our js cod
 
 ## Using the Yajsapi bundle library
 
-First we will import yajslib:
+First, we will import the `yajsapi` library:
 
 ```html
         <script>
@@ -91,12 +91,12 @@ First we will import yajslib:
 
 ### Task Executor
 
-When use will press `Run` button `run()` function will be invoked. The body of this function should contain typical sequence necessary to run TaskExecutor. So we will create it, then will run the task function and finally will end it.
+When use will press the `Run` button `run()` function will be invoked. The body of this function should contain the typical sequence necessary to run TaskExecutor. So we will create it, then run the task function, and finally will end it.
 
-Note that `create()` method received additional 3 parameters: 
-* `package` identifies the image that we want to use on provider,
-* `apiKey` is the key that enable our script to use Yagna REST API,
-* logger is a function that will be used by SDK to log - we will define it in a moment.
+Note that the `create()` method received additional 3 parameters: 
+* `package` identifies the image that we want to use on a provider,
+* `apiKey` is the key that enables our script to use Yagna REST API,
+* Logger is a function that will be used by SDK to log - we will define it in a moment.
 
 ```html
 <script>
@@ -118,13 +118,13 @@ Note that `create()` method received additional 3 parameters:
 ```
 
 The body of the `executor.run()` method is identical as in the case of Node.js executor script:
-It is a task function that receives worker context. It is used to run an `echo 'Hello World'` command. `cts.run()` will produce a Promise of result object. It will contain a stdout property that will store output of out command.
+It is a task function that receives worker context. It is used to run an `echo 'Hello World'` command. `cts.run()` will produce a Promise of the result object. It will contain a stdout property that will store the output of our command.
 
-The result is passed as an input param of `appendResults` function that will be responsible to display the outcome on the screen.
+The result is passed as an input param of the `appendResults()` function that will be responsible for displaying the outcome on the screen.
 
 ## Getting results
 
-Now let's create `appendResults` function which will put the output of our application into the designated `results` container.
+Now let's create the `appendResults()` function which will put the output of our application into the designated `results` container.
 
 ```html
 <script>
@@ -142,7 +142,7 @@ Now let's create `appendResults` function which will put the output of our appli
 
 ## Getting logs
 
-The TaskExecutor offers an optional logger parameter. It will accept an object implements the 'Logger' [Logger](../docs/interfaces/utils_logger.Logger.md) interface. The `logger` will utilize an `appendLog` function to add applicable records to the log storage area.
+The TaskExecutor offers an optional logger parameter. It will accept an object that implements the 'Logger' [Logger](../docs/interfaces/utils_logger.Logger.md) interface. The `logger` will utilize an `appendLog` function to add applicable records to the log storage area.
 
 ```html
 <script>

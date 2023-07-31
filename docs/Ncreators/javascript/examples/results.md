@@ -211,6 +211,6 @@ So in case of `node -w` as the node command runs but returns the error user rece
 
 In case the shell could not run the command, the user would receive the exit code 127 from linux shell. 
 
-Final note: if you run your tasks using `map()` or `forEach` methods TaskExecutor will stop the whole Job and will not continue after failure of any Task.
+Final note: if you run your tasks using `map()` or `forEach()` methods TaskExecutor will stop the whole Job and will not continue after failure of any Task.
 
 

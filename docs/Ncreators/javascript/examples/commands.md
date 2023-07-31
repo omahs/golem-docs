@@ -1,14 +1,14 @@
 ---
-description: Composing tasks commands
+Description: Composing tasks commands
 ---
 
-!!! Prerequisites	
+!!! Prerequisites 
 Yagna daemon installed and running with `try_golem`` app-key configured.
 
 
 ### Setting up project
 
-Create a project folder, initialize a Node.js project and install the `yajsapi` library.
+Create a project folder, initialize a Node.js project, and install the `yajsapi` library.
 
 ```bash
 mkdir golem-example
@@ -39,7 +39,7 @@ This article focuses on the `run()` command and chaining commands using the `beg
 We'll start with a simple example featuring a single `run()` command. Then, we'll focus on organizing a more complex task that requires a series of steps:
 
 * send a `worker.js` script to the provider (this is a simple script that prints "Good morning Golem!" in the terminal), 
-* run the `worker.js` on a provider and save output to a file (output.txt) and finally
+* run the `worker.js` on a provider and save the output to a file (output.txt) and finally
 * download the `output.txt` file to back to your computer.
 
 
@@ -64,7 +64,7 @@ const result = await executor.run(
 
 ```
 
-Note that `ctx.run()` accepts a string as an argument. This string is a command invocation, executed exactly as one would do in on the console. The command will be run in the folder defined by the `WORKDIR` entry in your image definition. 
+Note that `ctx.run()` accepts a string as an argument. This string is a command invocation, executed exactly as one would do in the console. The command will be run in the folder defined by the `WORKDIR` entry in your image definition. 
 
 
 ### Running multiple commands (prosaic way)
@@ -100,7 +100,7 @@ import { TaskExecutor } from "yajsapi";
 
 To ensure the proper sequence of execution, all calls must be awaited. We only handle the result of the second `run()` and ignore the others.
 
-Note: if you use this approach each, each command is sent separately to the provider and then executed.
+Note: If you use this approach, each command is sent separately to the provider and then executed.
 
 ![Commands prosaic](/assets/command_prosaic_log.png "Requestor script output logs")
 
@@ -147,9 +147,9 @@ import { TaskExecutor } from "yajsapi";
 })();
 ```
 
-Note: all commands after `.beginBatch()` are run in a sequence. The chain is terminated with `.end()`. The output is a Promise of an array of result objects. They are stored at indices according to their position in the command chain (the first command after `beginBatch()` has an index of 0).
+Note: All commands after `.beginBatch()` are run in a sequence. The chain is terminated with `.end()`. The output is a Promise of an array of result objects. They are stored at indices according to their position in the command chain (the first command after `beginBatch()` has an index of 0).
 
-The output of the 3rd command, `run('cat /golem/input/output.txt')`, is under index of of 2.
+The output of the 3rd command, `run('cat /golem/input/output.txt')`, is under the index of 2.
 
 ![Commands batch end](/assets/batch_end_log.png "Requestor script output logs")
 
@@ -187,7 +187,7 @@ import { TaskExecutor } from "yajsapi";
 ```
 
 
-Note that in this case, as the chain is ended with ` .endStream()`, we can read data chunks from ReadableStream, denoted as `res`. 
+Note that in this case, as the chain ends with ` .endStream()`, we can read data chunks from ReadableStream, denoted as `res`. 
 
 Once the stream is closed, we can terminate our TaskExecutor instance.
 
@@ -195,7 +195,7 @@ Once the stream is closed, we can terminate our TaskExecutor instance.
 
 !!! Note
 
-Since closing the chain with `.endStream()` produces ReadableStream, you can also retrieve the results in a synchronous manner:
+Since closing the chain with `.endStream()` produces ReadableStream, you can also synchronously retrieve the results:
 
 ```js
 import { TaskExecutor } from "yajsapi";

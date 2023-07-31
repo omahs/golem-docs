@@ -1,17 +1,17 @@
 ---
-description: Sending data
+Description: Sending data
 ---
 
-In this article we will present methods that let you send files to and from a provider as well as send JSON to a remote computer.
+In this article, we will present methods that let you send files to and from a provider as well as send JSON to a remote computer.
 
-!!! Note: at this moment sending files and JSON methods are available only in scripts that are run in node.js. 
+!!! Note: At this moment sending files and JSON methods are available only in scripts that are run in node.js. 
 
-!!! Prerequisites	
+!!! Prerequisites 
 - Yagna daemon installed and running
 
 ### Setting up project
 
-Create a project folder, initialize a Node.js project and install the `yajsapi` library.
+Create a project folder, initialize a Node.js project, and install the `yajsapi` library.
 
 ```bash
 mkdir golem-example
@@ -19,7 +19,7 @@ npm init
 npm i yajsapi
 ```
 
-### Uploading a file to provider
+### Uploading a file to the provider
 
 In this example, we calculate the `md5` hash of the example script `worker.mjs`, send it to a remote computer, and calculate the `md5` hash of the file in the remote location. Finally, we print both values for comparison.
 
@@ -60,7 +60,7 @@ const hash = createHash('md5').update(buff).digest('hex');
 ![uploadfile](/assets/uplaodfile_log.png "Requestor script output logs")
 
 
-### Downloading a file from provider
+### Downloading a file from the provider
 
 In this example, we create a file on a remote computer, list its content to a result object, and finally download it to compare its content with the result obtained remotely.
 

@@ -1,6 +1,6 @@
 ---
 title: Converting an image
-description: Guide on how to convert an image from Docker to Golem using gvmkit-build
+Description: Guide on how to convert an image from Docker to Golem using gvmkit-build
 ---
 
 # Converting an image
@@ -9,15 +9,15 @@ description: Guide on how to convert an image from Docker to Golem using gvmkit-
 
     * The tool works on: OS X 10.14+, Ubuntu 18.04 or 20.04, and Windows
     * Required: [gvmkit-build installation](installing-gvmkit-build.md)
-    * Basic knowledge of Docker along with docker service running
+    * Basic knowledge of Docker along with the Docker service running
     
     (Note: you can use npx and pipx tools to run gvmkit-build without installation). 
 
-Golem images are based off Docker images, which means that it is required to have a Docker image to be able to create (convert) to a Golem image. We will include a simple Dockerfile just to show how the tool and its commands work for demonstration purposes, and you are free to create your own Dockerfile's.
+Golem images are based on Docker images, which means that it is required to have a Docker image to be able to create (convert) to a Golem image. We will include a simple Dockerfile just to show how the tool and its commands work for demonstration purposes, and you are free to create your own Dockerfile.
 
 ## Building your Docker image
 
-Create a `Dockerfile` file with following content:
+Create a `Dockerfile` file with the following content:
 
 ```bash
 FROM debian:latest
@@ -46,7 +46,7 @@ Now build a Docker image tagged `golem-example` using the above Dockerfile.
     ```
 
 !!! info
-	In the [tutorial](../../tutorials/image.md) you will find more details about the Dockerfile content for this example. For more advanced builds, refer to Docker documentation or unofficial sources to learn more.
+    In the [tutorial](../../tutorials/image.md) you will find more details about the Dockerfile content for this example. For more advanced builds, refer to Docker documentation or unofficial sources to learn more.
 
 
 ## Converting Docker image to a Golem image
@@ -74,7 +74,7 @@ The examples below show how to convert the Docker image tagged `golem-example` t
 
 ## Converting and publishing your image at once (hash-based)
 
-This example explains how to convert and publish image that will be identified by its hash. The examples assumes you have Docker image tagged `golem-example` already created. 
+This example explains how to convert and publish an image that will be identified by its hash. The examples assume you have a Docker image tagged `golem-example` already created. 
 
 The hash is found in the `image link` line of the console output:
 
@@ -104,6 +104,6 @@ Note if the image was already converted to `.gvmi`, it will only be pushed.
 
 !!! golem-icon "Next steps:"
 
-	[Pushing an image to the registry](publishing.md){ .md-button .md-button--primary }
+    [Pushing an image to the registry](publishing.md){ .md-button .md-button--primary }
 
     Note: more information can be found in the [golemfactory/gvmkit-build-rs repository](https://github.com/golemfactory/gvmkit-build-rs).

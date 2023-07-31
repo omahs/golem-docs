@@ -1,18 +1,18 @@
 ---
-description: Selecting providers
+Description: Selecting providers
 ---
 
 
 You can select providers that suit your needs:
 
-- select provider based on minimal requirements for remote computer
-  cpu, storage, ram
-- select provider based on the whitelist/black list
-- select provider based on the proposed costs using custom filter
+- Select a provider based on minimal requirements for remote computer
+  CPU, storage, ram
+- Select a provider based on the whitelist/blacklist
+- Select a provider based on the proposed costs using a custom filter
 
 ### Filtering providers based on minimal requirements:
 
-You can define minimal requirements for a environment provided by node by stating minimal number of:
+You can define minimal requirements for an environment provided by a node by stating a minimal number of:
 * CPU cores `minCpuCores`, 
 * RAM `minMemGib`, 
 * disk space `minStorageGib` or 
@@ -41,20 +41,20 @@ import { TaskExecutor } from "yajsapi";
 
 !!! Note
 
-Be careful, filtering is done internally by Yagna and if your requirements turn out to be too demanding you will not receive any proposal from providers and your requestor script will terminate after timeout.
+Be careful, filtering is done internally by Yagna and if your requirements turn out to be too demanding you will not receive any proposal from providers and your requestor script will terminate after the timeout.
 
 ![](../../../assets/timeout_log.png)
 
 
 ### Selecting providers based on the whitelist
 
-In some situations you might need your tasks to be executed on a certain provider or exclude specific providers. If you know providers ids or names you can use `proposalFilter` option and use one of predefined filters: 
+In some situations, you might need your tasks to be executed on a certain provider or exclude specific providers. If you know providers' IDs or names you can use the `proposalFilter` option and use one of the predefined filters: 
 * `ProposalFilters.whiteListProposalIdsFilter()`,
 * `ProposalFilters.blackListProposalIdsFilter()`, 
 * `ProposalFilters.whiteListProposalNamesFilter()`. 
 * `ProposalFilters.blackListProposalNamesFilter()`
 
-All these filters will accept an array with ids or names of the providers that should be accepted or excluded.  
+All these filters will accept an array with IDs or names of the providers that should be accepted or excluded.  
 
 ```js
 import { TaskExecutor, ProposalFilters } from "yajsapi";
@@ -62,7 +62,7 @@ import { TaskExecutor, ProposalFilters } from "yajsapi";
 
 /**
  * Example demonstrating how to use the predefined filter `whiteListProposalIdsFilter`,
- * which only allows offers from a provider whose id is in the array
+ * which only allows offers from a provider whose ID is in the array
  */
 
 const whiteListIds = [
@@ -89,13 +89,13 @@ for(let i=0; i< whiteListIds.length; i++) {
 
 ```
 
-Note: you can read provider names from `ctx` workContext or from the proposal. We will look into proposals in next section 
+Note: You can read provider names from `ctx` workContext or from the proposal. We will look into proposals in the next section 
 
-### Selecting providers based on the proposed costs using custom filter
+### Selecting providers based on the proposed costs using a custom filter
 
-In this example we will show a custom filter that can be used to select the best provider. We will use it to filter based on the price, but this filter can be used to filter by any other attribute that is included in the provider proposals or even scan the market to see what is actually proposed.
+In this example, we will show a custom filter that can be used to select the best provider. We will use it to filter based on the price, but this filter can be used to filter by any other attribute that is included in the provider proposals or even scan the market to see what is proposed.
 
-Note: The whole process is started with requestor demand. Network will respond with proposals from active providers. Proposals are then negotiated until agreement is reached. Once the requestor and provider will sign agreement activity can be started and TaskExecutor can execute them.
+Note: The whole process is started with requestor demand. The network will respond with proposals from active providers. Proposals are then negotiated until an agreement is reached. Once the requestor and provider will sign the agreement activity can be started and TaskExecutor can execute them.
 
 Let's how to use it:
 
@@ -146,12 +146,12 @@ const myFilter2 = async (proposal) => {
 })();
 ```
 
-Note `customFilter` is a function that accepts `proposal` object as its param and should return `true` or `false` depending on the decision based on the proposal properties.
+Note that `customFilter` is a function that accepts a `proposal` object as its parameter and should return `true` or `false` depending on the decision based on the proposal properties.
 
-Our custom function collects pricing data until we have a set from 10 proposals. Then it accepts proposals only if the price is lower than average from the last ten proposals.
+Our custom function collects pricing data until we have a set of 10 proposals. Then it accepts proposals only if the price is lower than average from the last ten proposals.
 
-Provider price is calculated as product of prices define per specific usage counter,
+Provider price is calculated as the product of prices defined per specific usage counter,
 
-The counters are defined in `'golem.com.usage.vector'` property and the prices are defined in `'golem.com.pricing.model.linear.coeffs'`. The last element in the price coeffs array is a fixed element of the total price (one can consider it the one time price for deployment). 
+The counters are defined in `'golem.com.usage.vector'` property and the prices are defined in `'golem.com.pricing.model.linear.coeffs'`. The last element in the price coeffs array is a fixed element of the total price (one can consider it the one-time price for deployment). 
 
-Note that the sequence of the counters is not fixed therefore we need to find the index of the specific counter. In our examples we take into account only the price related to the usage of the total environment (as our example task has a very short execution time). 
+Note that the sequence of the counters is not fixed therefore we need to find the index of the specific counter. In our examples, we take into account only the price related to the usage of the total environment (as our example task has a very short execution time). 

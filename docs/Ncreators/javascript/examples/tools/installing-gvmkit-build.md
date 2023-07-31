@@ -1,6 +1,6 @@
 ---
-title: Installing gvmkit-build
-description: Guide on how to install gvmkit-build
+Title: Installing gvmkit-build
+Description: Guide on how to install gvmkit-build
 ---
 
 # Installing gvmkit-build
@@ -42,4 +42,4 @@ Gvmkit-build is a tool that converts Docker images into .gvmi formats used by Go
 
     [Custom Golem image Step by step Tutorial](../../tutorials/image.md){ .md-button .md-button--primary }
 
-    Note: more information can be found in the [golemfactory/gvmkit-build-rs repository](https://github.com/golemfactory/gvmkit-build-rs).
+    Note: More information can be found in the [golemfactory/gvmkit-build-rs repository](https://github.com/golemfactory/gvmkit-build-rs).
