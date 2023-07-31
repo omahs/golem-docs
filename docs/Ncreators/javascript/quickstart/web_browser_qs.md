@@ -1,19 +1,17 @@
 ---
-description: A minimal example of a functional Golem requestor agent in browser
+Description: A minimal example of a functional Golem requestor agent in a browser
 ---
 
 # Requestor in browser
 
-This example demonstrates how to run requestor script in browser context.
-In most of our examples we present them in scripts that are run in Node.js.
-You can also run your scripts in browser context. This example will explain how you can do it.
+In most of our examples, we demonstrate how to run a requestor script in Node.js. However, you can also run your scripts in a browser context. This example will explain how to do it.
     
 
 ## Prerequisites
 
-Before getting started, you need to install and launch the Yagna daemon in version 0.13.0+. Note such version is available as `release candidate`. It can be installed using instructions for manual Yagna installation available [here](../examples/tools/install_yagna.md). 
+Before getting started, you need to install and launch the Yagna daemon in version 0.13.0+. Note such a version is available as `release candidate`. It can be installed using instructions for manual Yagna installation available [here](../examples/tools/install_yagna.md). 
 
-In addition you need to start Yagna with a parameter that allows you to handle REST API requests with a CORS policy. You can do this by running the following command:
+In addition, you need to start Yagna with a parameter that allows you to handle REST API requests with a CORS policy. You can do this by running the following command:
 
 
 === "MacOS / Linux"
@@ -30,7 +28,7 @@ In addition you need to start Yagna with a parameter that allows you to handle R
     ```
 
 The `--api-allow-origin` value should be set to the URL where your web application will be served.
-In this examples we will use `http-server`.
+In this example, we will use `http-server`.
 
 ## Setting up project
 
@@ -44,7 +42,7 @@ This will install `http-server` utility to host our web page, where we will run 
 
 ## HTML page
 
-Next, we'll create the main `index.html` file with a following content:
+Next, we'll create the main `index.html` file with the following content:
 
 ```html
 <!DOCTYPE html>
@@ -81,7 +79,7 @@ In this layout, there are three elements:
 ## Requestor script
 
 
-Next, we'll create requestor.mjs file with following content:
+Next, we'll create a requestor.mjs file with the following content:
 
 ```js
 import * as yajsapi from "https://unpkg.com/yajsapi"
@@ -125,13 +123,13 @@ document.run = run;
 export { };
 ```
 
-Note the file contains `run()` function that creates the body of requestor script (similar to the one we use in Node.js) and a set of helper functions that will let us present the logs and result in the browser window.
+Note the file contains the `run()` function that creates the body of the requestor script (similar to the one we use in Node.js) and a set of helper functions that will let us present the logs and results in the browser window.
 
-Now if we have a running Yagna daemon started with the ``--api-allow-origin` properly set to `http://localhost:8080` and have your Yagna APP key set to 'try_golem' launch `http-server` we should see our app available in the browser.
+Now, if we have a running Yagna daemon started with the ``--api-allow-origin` properly set to `http://localhost:8080` and have your Yagna APP key set to 'try_golem' launch `http-server` we should see our app available in the browser.
 
 [ Open localhost ](http://localhost:8080)
 
-If you click the run button, after a while in the result container, we should get the result of the script: `Hello World`, and in the log container we should see the logs of executed commands.
+If you click the run button, after a while, in the result container, we should get the result of the script: `Hello World` and see the logs of executed commands in the log container.
 
 ![Output logs](../../../assets/browser_log.png)
 

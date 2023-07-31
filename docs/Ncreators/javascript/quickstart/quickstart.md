@@ -1,5 +1,5 @@
 ---
-description: Create your own JavaScript application on Golem
+Description: Create your own JavaScript application on Golem
 ---
 
 # QuickStart
@@ -7,11 +7,11 @@ description: Create your own JavaScript application on Golem
 In this article, we'll show you how to run a simple task on the Golem Network. 
 
 The goal is to run just a basic shell command on a rented provider.  
-It should take just a few minutes to complete and finally you will see the command's result printed in your terminal. 
+It should take just a few minutes to complete and finally, you will see the command's result printed in your terminal. 
 
 
 !!! Info
-	**Note: This example has been designed to work with the following environments:**
+    **Note: This example has been designed to work with the following environments:**
 
 * OS X 10.14+, Ubuntu 20.04 or Windows
 * Node.js 16.0.0 or above
@@ -30,11 +30,11 @@ Yagna is a daemon whose purpose is to communicate and perform operations on the 
     ```bash
     curl -sSf https://join.golem.network/as-requestor | bash -
     ```
-    You might be asked to modify your PATH afterwards.
+    You might be asked to modify your PATH afterward.
 
 === "Windows Manual installation"
 
-    Alternatively, if you can't install in easy way, you will do it manually in the following way:
+    Alternatively, if you can't install it in an easy way, you will do it manually in the following way:
     
     1. Download the requestor package - prefixed `golem-requestor` - appropriate for your platform from: [https://github.com/golemfactory/yagna/releases/latest](https://github.com/golemfactory/yagna/releases/latest).
     2. Unzip the archive to extract the two files: `yagna.exe` and `gftp.exe`.
@@ -42,7 +42,7 @@ Yagna is a daemon whose purpose is to communicate and perform operations on the 
 
 === "Unix Manual installation"
 
-    Alternatively, if you can't install in easy way, you will do it manually in the following way:
+    Alternatively, if you can't install it in an easy way, you will do it manually in the following way:
     
     1. Download the requestor package - prefixed `golem-requestor` - appropriate for your platform from: [https://github.com/golemfactory/yagna/releases/latest](https://github.com/golemfactory/yagna/releases/latest).
     2. Unpack `yagna` and `gftp` binaries and put them somewhere in your PATH (e.g. copy them to /usr/local/bin on Unix-like systems) or add the directory you placed the binaries into your PATH.
@@ -81,17 +81,17 @@ yagna service run
 
 #### Get some funds
 
-Requesting tasks on Golem Network requires some credits on the network (GLM tokens). 
+Requesting tasks on the Golem Network requires some credits on the network (GLM tokens). 
 As this example will run on a test network you can get test credits.
 
-Open another terminal and run the following command to complete configuration:
+Open another terminal and run the following command to complete the configuration:
 
 ```bash
 yagna payment fund
 yagna payment init
 ```
 The first one will top up your account with funds (actually tokens, you can pay with only in the test network, where by default your apps are running). 
-Second one will initialize the payment driver.
+The second one will initialize the payment driver.
 
 
 
@@ -114,10 +114,10 @@ import { TaskExecutor } from "yajsapi";
 
 (async () => {
   const executor = await TaskExecutor.create({
-	package: "529f7fdaf1cf46ce3126eb6bbcd3b213c314fe8fe884914f5d1106d4",	
-	yagnaOptions: { apiKey: 'try_golem' }});
+    package: "529f7fdaf1cf46ce3126eb6bbcd3b213c314fe8fe884914f5d1106d4",    
+    yagnaOptions: { apiKey: 'try_golem' }});
   const result = await executor.run(
-	async (ctx) => (await ctx.run("node -v")).stdout);
+    async (ctx) => (await ctx.run("node -v")).stdout);
   await executor.end();
 
   console.log("Task result:", result);
@@ -145,7 +145,7 @@ You can find information regarding the version of the node used on the remote co
 
 ## Summary
 
-You've installed the yagna daemon and executed a simple task on the Golem Network.
+You've installed the Yagna daemon and executed a simple task on the Golem Network.
 However, you can accomplish much more. Here are some suggested next steps to explore the Golem Network world:
 
 Next steps:
