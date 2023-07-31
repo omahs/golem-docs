@@ -1,22 +1,22 @@
 ---
 title: Creating and using images on Golem
-description: Creating and using images on Golem
+Description: Creating and using images on Golem
 ---
 
 # Creating and using images on Golem
 
-This article will go through the process of creating a Dockerfile, building a Docker image, then converting to a Golem image and using it in a requestor script.
+This article will go through the process of creating a Dockerfile, building a Docker image, then converting it to a Golem image and using it in a requestor script.
 
 !!! info
     
     * Tutorial is designed for: OS X 10.14+, Ubuntu 18.04 or 20.04, and Windows
     * Docker service running is required
     * Required to have followed the [gvmkit-build installation](../examples/tools/installing-gvmkit-build.md)
-    * Required: an installation of yagna, and an installation of yarn
+    * Required: an installation of Yagna
 
 ## Creating the Dockerfile
 
-This is our simple `Dockerfile` we are going to use, using the debian base image, creating one volume, and changing the work directory. Simply create a file with the name `Dockerfile`, without any file extension, and paste the following contents:
+This is the simple `Dockerfile` we are going to use, using the `Debian` base image, creating one volume, and setting the working directory. Simply create a file with the name `Dockerfile`, without any file extension, and paste the following contents:
 
 ```dockerfile
 FROM debian:latest
@@ -70,7 +70,7 @@ Use 'docker scan' to run Snyk tests against images to find vulnerabilities and l
     Note that the image won't be turned into a file in the same directory. You don't need to see this file, but if you do, search the internet for where images are stored in your operating system.
 
 
-## Converting from Docker to Golem, and uploading it to the registry
+## Converting from Docker to Golem and uploading it to the registry
 
 Now when you have a Docker image built, we can convert it to a Golem image. To save time, we will also upload it to the registry with the same command. To do this, you need to run the appropriate command that uses `gvmkit-build` to convert and push the image `golem-example` to the registry.
 
@@ -134,11 +134,11 @@ Uploading image to golem registry: https://registry.golem.network
  -- image validated successfully
 ```
 
-The hash is found after the `image link`, which in this case gives us the hash `28704b5186fb46099b6138e6f1db814a631f6963da456492476d0db9`. If you ever lose your hash, you can always recover/re-generate it from running the same command again.
+The hash is found after the `image link`, which in this case gives us the hash `28704b5186fb46099b6138e6f1db814a631f6963da456492476d0db9`. If you ever lose your hash, you can always recover/re-generate it by running the same command again.
 
 ## Preparing the environment
 
-To include the `yajsapi` library, we need to prepare our environment with the following commands:.
+To include the `yajsapi` library, we need to prepare our environment with the following commands:
 
 ```
 npm init
@@ -162,10 +162,10 @@ We can now create our `index.mjs` requestor file, with the `package: ...` matchi
     })();
     ```
 
-Lastly, create a `image_description.txt` file to be uploaded and used on the provider:
+Lastly, create an `image_description.txt` file to be uploaded and used on the provider:
 
 ```txt
-The image hash is `28704b5186fb46099b6138e6f1db814a631f6963da456492476d0db9`. By changing out the hash to another from another image, the provider will have another environment.
+The image hash is `28704b5186fb46099b6138e6f1db814a631f6963da456492476d0db9`. By altering the hash to another value  - corresponding to a different image, you ask the provider use anotjhe image to create remote environment when you will run you tasks.
 
 The result is the console output of the `cat /golem/work/image_description.txt` command. By changing this, we can experiment with other functionality.
 
@@ -178,15 +178,14 @@ Run the following command after ensuring the Yagna service is running and config
 
 ```node index.mjs```
 
-You have now successfully created and used your own Golem image in a requestor script!
+You have successfully created and used your Golem image in a requestor script!
 
 <!-- !!! info
 
-    Note that the full path is required in all commands from a requestor script, regardless of what was specified in the `WORKDIR` instruction in your Dockerfile. This means that you upload and download files, and point commands to a directory and a file and not just a file.
-     -->
+Note that the full path to a file is required in all commands inside a requestor script, regardless if the defined workign directory by `WORKDIR` instruction in your Dockerfile. -->
 
 <!--
-!!! example "Challenge yourself:"
+!!! "Challenge yourself:"
 
-    Try see if you can change the command so that it logs out the contents of the file or if you can figure out how to download the file to your own computer.
+    Try to see if you can change the command so that it logs out the contents of the file or if you can figure out how to download the file to your computer.
 -->

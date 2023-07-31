@@ -1,5 +1,5 @@
 ---
-description: Introduction to Golem Network and Task model
+Description: Introduction to Golem Network and Task model
 ---
 
 
@@ -7,28 +7,34 @@ description: Introduction to Golem Network and Task model
 
 ## Golem Network
 
-Golem Network is a p2p network that consists of many nodes. Each node is a system with a __Yagna__ demon running on it. The nodes that offer their resources for others are called __providers__. The nodes that hire resources are called __requestors__.
-	
-In order to get things done (the Job) in the Network, you need to define it and split into your task(s) and send it to the network using the Yagna demon. This is done using requestor script that will utilize Golem JS SDK. You also need to define the environment used to run your activity on a provider, it is done by software package in the form of an __image__. 
+Golem Network is a p2p network that consists of many nodes. Each node is a system with a __Yagna__ demon running on it. The nodes that offer their resources to others are called __providers__. The nodes that hire resources are called __requestors__.
+    
+To get things done (the Job) in the Network, you need to define it, split it into your task(s), and send it to the network using the Yagna demon. This is done using a __requestor script__ (or simply __Golem app__) that will utilize Golem JS SDK. You also need to define the environment used to run your activity on a provider, it is done by a software package in the form of an __image__. 
 
-So, to run your tasks on Golem Network you need:
+Let's get familiar with other terms that will help you navigate through Golem docs and find relevant information more easily.
 
-* A Yagna demon that will let you connect to the Golem Network. (Yagna)
-* Image, that constitute an environment in with you will run your commands (Working with Images)
-* A script, in which you will define tasks and execute them. (Simple script)
+A most simple operation, like running a command or sending a file, is called a __command__ or a __step__.
+We __compose__ tasks from commands (sometimes we __define__ them by commands).
+Tasks are __executed__ on __providers__ aka __remote computers__ aka __nodes__.
 
-Script will use Task API provided by yajsapi lib, so let’s get familiar with the Task model.
+So, to run your app on Golem Network you need:
+
+* A Yagna demon that will let you connect to the Golem Network.
+* [Image](../guides/golem-images-explained.md), that constitutes an environment in which you will run your commands.
+* A [requestor script](../guides/golem-images-explained.md), in which you will define tasks and execute them.
+
+The script will use Task API provided by yajsapi lib, so let’s get familiar with the Task model.
 
 
 ## Task model
 
-You can use the Golem Network resource to do a Job. A simplest Job is just a single task that you want to execute on the remote computer. In fact to take full advantage of the network you should split your Job into many Tasks.
-	
+You can use the Golem Network resources to do a Job. A simple Job is just a single task that you want to execute on the remote computer. In fact to take full advantage of the network you should split your Job into many Tasks.
+    
 A single task will be run on a single provider. If you can divide your Job into many smaller independent fragments - they will be processed in parallel on multiple providers. The Task API will spawn them on available providers for you.
 
-Tasks are defined as functions that implement Worker Interface. Each task function may be a single command (like: `echo “Hello World”``), but may consist of multiple, separate steps, including sending files to and from the provider to your local machine. We provide examples showing the usage of API in different scenarios.
+Tasks are defined as functions that implement Worker Interface. Each task function may be a single command (like: `echo “Hello World”``) but may consist of multiple, separate steps, including sending files to and from the provider to your local machine. We provide examples showing the usage of API in different scenarios.
 
-Tasks are run in the context that is defined by an image. In our examples we use Golem standard images, but we also provide tutorials on how to prepare your own image.
+Tasks are run in the context that is defined by an image. In our examples, we use Golem standard images, but we also provide tutorials on how to prepare your image.
 
 ## Main Tasks API features:
 
@@ -36,56 +42,65 @@ Tasks are run in the context that is defined by an image. In our examples we use
 
     Click on the links to go the the usage examples.
 
-### Orchestrating tasks execution
+### Orchestrating task execution
 
 Task executor may run:
 
 * a single task on a single provider (`.run()` method). 
-* multiple tasks on available providers (`.map()` and `.forEach()` methods). The number of providers is defined by the user, providers may be used more than once until all tasks are executed.
-* an initialising command run once per engaged provider (`.beforeEach()`). This allows to prepare workers before processing main batch of tasks.
+* multiple tasks on available providers (`.map()` and `.forEach()` methods). The maximum number of concurrently engaged providers is defined by the user; providers can be engaged more than once, until all tasks are executed.
+* An initializing command runs once per engaged provider (`.beforeEach()`). It allows for the preparation of workers before processing the main batch of tasks.
 
-User can also define how the Job is realised by defining maximum numer of providers engaged to execute tasks (`maxParallelTasks` parameter).
+Users can also define the maximum number of concurrently engaged providers (`maxParallelTasks` parameter).
 
-	
-### Defining Tasks
+See examples [here](../examples/tasks.md).
 
-Tasks are defined as task functions. The simplest function contains just a single `run()` call on worker context `ctx`. You can run commands in sequence or chain them into batches. In this section you be provided with examples showing how to: 
+    
+### Composing task
 
-* run a single command on remote computer (`.run()` method).
-* organise a set of commands into a batch: (`.beginBatch()` method) with 2 different output types:
-	* Promise (`.end()` method)
-	* stream (`.endStream()` method)
+Tasks are defined by task functions. The simplest function contains just a single `run()` call on worker context `ctx`. You can run commands in sequence or chain them into batches. In this section you will be provided with examples showing how to: 
 
-`run` commands may be combined with other worker context methods.  
+* Run a single command on a remote computer (`.run()` method).
+* Organise a set of commands into a batch: (`.beginBatch()` method) with 2 different output types:
+    * Promise (`.end()` method)
+    * ReadableStream (`.endStream()` method) 
+
+See examples [here](../examples/commands.md).   
 
 ### Sending Data to and from Providers
 
-User can send:
+Users can send:
 
 * files to remote computer (`.uploadFile()` method)
 * files from remote computer (`.downloadFile()` method)
 * json to remote computer (`.uploadJson()` method)
 
-Note: user must define a VOLUME to indicate a folder designed to contain files on remote computer.
+Note: The user must define a VOLUME within an image definition, to indicate a folder designed to contain files on a remote computer to enable data transfer.
+
+See examples [here](../examples/data.md).   
 
 ###  Processing results
 
-Each command (run, uploadFile) will produce a result object that contains stdout, stderr of the respective step run.
+Each command (run, uploadFile) produces a result object that contains stdout, stderr of the respective step run. Users can use this output to manage program flow.
 
-The way you can process results depends on the way you manage tasks and also how are they defined. 
-It also defines how the potential failures on provider side will be handled by the yajsapi.
+The way you can process results depends on method  you compose tasks and how tasks are composed. 
+It also defines how the potential failures on the provider side arew handled by the JS SDK .
+
+See examples [here](../examples/results.md).    
   
 
-### Defining minimal requirements for provider system / selectin providers.
+### Defining minimal requirements for provider system / selecting providers.
 
-User can define minimal requirements for the provider's system (like memory, storage, CPU Threds, CPU cores) via initial parameters provided to the `TaskExecutor.create()` method.
+Users can define minimal requirements for the provider's system (like memory, storage, CPU Threads, and CPU cores) via dedicated parameters provided by the `TaskExecutor.create()` method.
 
-`yajsapi` provides the user with a number of build-in filters that can be used to select better providers. User can also define his own filter where he can i.e. select provider on the basis of user defined criteria.
+JS SDK provides the user with several built-in filters: `whiteListProposalIdsFilter()`, `blackListProposalIdsFilter()`, `whiteListProposalNamesFilter()`, `blackListProposalNamesFilter()` that can be used to select or exclude certain providers.
 
+The user can also define his filter using the custom `proposalFilter`.
 
-You can explore our [tutorials] to see how to use these features effectively.
+See examples [here](../examples/demands.md).    
+
 
 !!! golem-icon "Next steps:"
 
 [JS Examples](../examples/index.md)
+You can explore our [tutorials] to see how to use these features effectively.
    
