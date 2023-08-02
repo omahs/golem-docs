@@ -99,6 +99,8 @@ nav:
       - 'Provider configuration': 'providers/config.md'
       - 'Provider troubleshooting': 'providers/trouble.md'
       - 'yagna CLI reference': 'providers/reference.md'
+    - 'Golem docs migration':
+      - 'golem/index.md'
 markdown_extensions:
   - admonition
   - attr_list

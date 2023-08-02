@@ -2,7 +2,7 @@
 description: 
 ---
 
-The Golem network is a p2p network of computers. It was created by a community of people who believe that decentralization is an idea that deserves their support and who want to participate and take advantage of the Golem project.
+The Golem network is a p2p network of computers. It is being created by a community of people who believe that decentralization is an idea that deserves their support and who want to participate and take advantage of the Golem project.
 
 All you need to do is to install our Yagna daemon...
 

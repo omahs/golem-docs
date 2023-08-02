@@ -9,7 +9,7 @@ Instructions on how to use Golem tools
 |[Yagna installation for requestors](install_yagna.md) | Simple instructions on how to install Yagna daemon and become part of the Golem Network |
 |[Converting Docker image to Golem format](converting-an-image.md) | Instructions how to convert Docker image into Golem format   |
 |[Gvmkit-build installation (image conversion tool)](installing-gvmkit-build.md) | How to install the tool that can convert Docker image into Golem format (+ instructions on how to run it without installation) |
-|[Publishing custom images](publishing. md)| Information on how to make your image available for providers: both "hash" and "tag" naming conventions covered.   |
+|[Publishing custom images](publishing.md)| Information on how to make your image available for providers: both "hash" and "tag" naming conventions covered.   |
 
 
 JS code examples:
