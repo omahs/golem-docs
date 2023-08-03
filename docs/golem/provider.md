@@ -1,22 +1,21 @@
 ---
-description: The provider actor in the Golem
+Description: The provider actor in the Golem
 ---
+# Provider requirements
+Provider node can be run on a 64-bit x86-64 CPU computer with Linux only.
 
 # Provider architecture
 
-[gap here]
+The provider is a node with the Yagna daemon, with additional components installed. These components implement the provider logic. 
+To make its resources available to the requestor providers utilize an **execution unit** (exe-unit for short). Exe-unit starts and controls a runtime - the type of runtime depends on the type of image the requestor wants to run. Exe-unit allows also for interaction with the running runtime.
 
-The provider logic is implemented as a **provider agent** which is a piece of code that runs on the provider's machine and communicates via REST with the Golem daemon.
+Currently, Golem provides:
 
-The provider can make its resources available to the requestors with the help of many types of **execution units** \(exe-unit for short\). Currently, Golem supports:
+* Virtual Machine (VM) runtime that runs images provided in GVMI format,
+* WASM runtime that runs WebAssembly code
 
-* VM exe unit \(or VM runtime\) that runs Docker images and allows for an interaction with the running container,
-* and WASM exe unit \(or WASM runtime\) that runs WASM code
+In our examples, we utilize VM runtimes that run a requestor-provided GVMI image.
 
-_Please note the "ALT" frames in the diagram above: the provider uses only one exe unit at the same time out of the two available._
+You can learn more about becoming a Golem providers [here](../providers/install.md).
 
-You can learn more about Golem providers here:
-
-{% page-ref page="provider.md" %}
-
-{% page-ref page="../provider-tutorials/provider-tutorial.md" %}
+You can learn more about the Golem images [here](../Ncreators/javascript/guides/golem-images-explained.md).

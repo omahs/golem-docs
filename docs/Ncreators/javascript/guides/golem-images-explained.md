@@ -61,10 +61,16 @@ Because of how Golem's VM execution unit works, Docker's `ENTRYPOINT` and `CMD` 
 
 !!! golem-icon ""
 
-    [Installing gvmkit-build](../examples/tools/installing-gvmkit-build.md){ .md-button .md-button--primary }
+    [Installing gvmkit-build](../examples/tools/installing-gvmkit-build.md)
 
 ### Custom Golem image Step-by-step Tutorial
 
 !!! golem-icon ""
 
-    [Creating custome Golem Image](../tutorials/image.md){ .md-button .md-button--primary }
+    [Creating custom Golem Image](../tutorials/image.md)
+
+### Golem images FAQ
+
+!!! golem-icon ""
+
+    [Golem Images FAQ](./images-FAQ.md)

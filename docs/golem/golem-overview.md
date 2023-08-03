@@ -23,7 +23,7 @@ In general, almost any computer might act as a provider. It can be a laptop, des
 
 Resources can be utilized in different scenarios: it might be a computation requiring heavy lifting right away but it could be also maintaining a service up and running and ready to serve requests coming from requestors whenever they come. 
 
-In exchange for the resources sharing you will receive payment in GLM, and the payment is executed through [Ethereum](https://ethereum.org/).
+In exchange for the resources sharing you will receive payment in GLM, and the payment is executed through [Polygon](https://polygon.technology/).
 
 To become a provider one needs to install a provider agent - a specific piece of code that implements the Golem network protocol, thus the machine running it acts as a Golem node. Golem Factory provides the provider binaries as a pre-built Linux installation package. You do not need to perform any development or extensive configuration to have a Golem provider up and running on your Linux machine.
 
@@ -31,7 +31,7 @@ To become a provider one needs to install a provider agent - a specific piece of
 
 Provider installation and configuration instructions are [here](../providers/install.md).
 
-You can read more on how the provider works [here](missinglink_provider_arch.md).
+You can read more on how the provider works [here](provider.md).
 
 ### Requestor
 
@@ -53,22 +53,15 @@ The whole process is handled by Golem software Yagna and SDK.
 3. If a Requestor is willing to use the Provider's resources, the Agreement is signed.
 4. The resources are used by the Requestor \(for example by transferring input/output files and running a particular Golem VM Image, which is derived from the Docker image, on the Provider's hardware\).
 5. The Provider bills the Requestor in GLM tokens.
-6. The Requestor performs an [Ethereum](https://ethereum.org/) payment for resource usage.
+6. The Requestor performs an [Polygon](https://polygon.technology/) payment for resource usage.
 
 
 ### Payments
 
 The last step in the interactions is a payment between requestors and providers for the usage of the resources. There are many possible payment scenarios. Currently, the default is to use the [Polygon](https://polygon.technology/), a Layer2 solution that greatly improves cost-effectiveness. However, a user can also opt to use the Ethereum mainnet, should they wish to do so.
 
-More on that here:
+More on payment process you can find [here](missinglink-payment-details.md).
 
-{% page-ref page="../payments/layer-2-payments.md" %}
 
-and here:
 
-{% page-ref page="../payments/using-golem-on-mainnet/README.md" %}
-
-### FAQ
-
-You can find answers to frequently asked questions about Golem Requestors and providers [here](missinglink.md)
 

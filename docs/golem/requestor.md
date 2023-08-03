@@ -28,7 +28,8 @@ Yet another scenario allows you to run the requestor agent directly in the brows
 The basic requestor development tutorials are [here](../Ncreators/javascript/tutorials/index.md) (JS):
 
 
+### Requestor FAQ
 
-
+You can find answers to frequently asked questions about the Golem Requestor [here](./requestor-faq.md).
 
 

@@ -1,13 +1,13 @@
 site_name: ""
 nav:
     - Home: 'index.md'
-    - 'Quickstart': 
+    - 'QuickStarts': 
       - 'quickstarts/index.md'
       - 'JS QuickStart (node.js)': 'quickstarts/js_quickstart.md'
-      - 'Other quickstarts ToC': 
+      - 'Other QuickStarts': 
         - 'quickstarts/index.md'
-        - 'Golem in Browser' : 'Ncreators/javascript/quickstart/web_browser_qs.md'
-        - '"no-code" app deployment' : 'quickstarts/no_code_quickstart.md'
+        - 'Golem in a Browser': 'Ncreators/javascript/quickstart/web_browser_qs.md'
+        - '"no-code" app deployment': 'quickstarts/no_code_quickstart.md'
     - 'Create on Golem N':
       - 'Ncreators/index.md' 
       - JavaScript:
@@ -96,9 +96,11 @@ nav:
     - 'Share and Earn':
       - 'providers/index.md'
       - 'Provider installation': 'providers/install.md'
-      - 'Provider configuration': 'providers/config.md'
+      - 'Provider basic configuration': 'providers/config.md'
+      - 'Provider configuration options': 'providers/config2.md'
+      - 'Provider FAQ': 'providers/provider-faq.md'
       - 'Provider troubleshooting': 'providers/trouble.md'
-      - 'yagna CLI reference': 'providers/reference.md'
+      - 'Yagna CLI reference': 'providers/reference.md'
     - 'Golem docs migration':
       - 'golem/index.md'
 markdown_extensions:
