@@ -82,7 +82,7 @@ Next steps:
 
 !!! golem-icon "Next steps:"
 
-    [Troubleshooting](trouble.md){ .md-button .md-button--primary }
+    [Troubleshooting](troubleshooting.md){ .md-button .md-button--primary }
 
     [Provider CLI reference](reference.md){ .md-button .md-button--primary }
 

@@ -13,7 +13,11 @@ Description: Guide on how to convert an image from Docker to Golem using gvmkit-
     
     (Note: you can use npx and pipx tools to run gvmkit-build without installation). 
 
-Golem images are based on Docker images, which means that it is required to have a Docker image to be able to create (convert) to a Golem image. We will include a simple Dockerfile just to show how the tool and its commands work for demonstration purposes, and you are free to create your own Dockerfile.
+Golem images are based on Docker images, which means that it is required to have a Docker image to be able to convert it to a Golem image. We will include a simple Dockerfile just to show how the tool and its commands work for demonstration purposes, and you are free to create your own Dockerfile.
+
+!!! Note
+    If you don't have Docker installed follow these instructions: https://www.docker.com/products/docker-desktop.
+
 
 ## Building your Docker image
 
@@ -27,7 +31,7 @@ WORKDIR /golem/work
 
 Now build a Docker image tagged `golem-example` using the above Dockerfile. 
 
-=== "Ubuntu"
+=== "Linux"
 
     ```bash
     docker build . -t golem-example
@@ -44,9 +48,6 @@ Now build a Docker image tagged `golem-example` using the above Dockerfile.
     ```bash
     docker build . -t golem-example
     ```
-
-!!! info
-    In the [tutorial](../../tutorials/image.md) you will find more details about the Dockerfile content for this example. For more advanced builds, refer to Docker documentation or unofficial sources to learn more.
 
 
 ## Converting Docker image to a Golem image
@@ -104,6 +105,6 @@ Note if the image was already converted to `.gvmi`, it will only be pushed.
 
 !!! golem-icon "Next steps:"
 
-    [Pushing an image to the registry](publishing.md){ .md-button .md-button--primary }
+    [Publishing an image in the registry](publishing.md){ .md-button .md-button--primary }
 
     Note: more information can be found in the [golemfactory/gvmkit-build-rs repository](https://github.com/golemfactory/gvmkit-build-rs).

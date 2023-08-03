@@ -3,15 +3,11 @@ title: Golem images and usage explained
 Description: Learn what a Golem image is and how to create and use one
 ---
 
-
-
-
 # Golem images and usage explained
-
 
 ## Golem Image
 
-A Golem image is a software package that contains all tools, libraries, tools, configurations, dependencies, and settings that are required to execute your tasks on a remote computer. The image is used to create the environment (VM) where your tasks are executed.
+A Golem image is a software package that contains tools, libraries, tools, configurations, dependencies, and settings that are required to execute your tasks on a remote computer. The image is used to create the environment (VM) where your tasks are executed.
 
 ## Golem image creation 
 
@@ -24,6 +20,13 @@ The general process of creating a Golem image looks like this:
 * Convert to Golem image using gvmkit-build ([example](../examples/tools/converting-an-image.md))
 
 See our [Create Golem Image Tutorial](#custom-golem-image-step-by-step-tutorial) and [Examples](#installation-guide-and-other-examples) section to see how to create an image and examples on how to use the tool. 
+
+## Publishing the image
+
+Once your image is built and tested you can push it to a remote repository so that it becomes available to providers within the Golem network. Golem Factory manages a freely-accessible repository that everybody can push into without any special requirements. 
+
+While all code samples, libraries, and tools use the Golem-managed image repo as default, it is not mandatory to use it - developers may publish their Golem images under any publicly accessible URL.
+
 
 ## Golem image use
 
@@ -54,6 +57,12 @@ This will define the default directory to be used in shell commands sent to a re
 ### ENTRYPOINT, CMD
 
 Because of how Golem's VM execution unit works, Docker's `ENTRYPOINT` and `CMD` statements are effectively ignored. You need to pass the relevant initialization commands as part of the task sent to a remote computer as a part of your task function or use `beforeEach()` method. See examples.
+
+## Images, Virual Machines and file system content
+
+When you engage a provider, its provider_agent runs exe-unit (a runtime) to run your image or WASM code. In the case of Golem Images that are run in VMs, the runtime being used is ya-runtime-vm.
+
+In Golem terms such an image run on the provider is called an Activity. Activities are utilized to execute requestor tasks. Unless an activity is terminated, all subsequent tasks that will be scheduled on the same provider will use the same activity - meaning the same image container with its history. That means that within the lifecycle of the Activity the state of the file system is maintained. One consequence is that any filesystem changes - be it updates to volumes or to other locations within the VM - performed within a single execution of a task will still be present when subsequent tasks get executed.
 
 ## Next steps
 

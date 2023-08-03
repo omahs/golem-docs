@@ -22,6 +22,7 @@ nav:
             - 'Running parallel tasks': 'Ncreators/javascript/tutorials/parallel_processing.md'
             - 'Running Golem from browser': 'Ncreators/javascript/tutorials/web.md'
             - 'Building custom image': 'Ncreators/javascript/tutorials/image.md'
+            - 'Testing Golem Images': 'Ncreators/javascript/tutorials/testing-golem-image.md'
           - 'JS TASK API Examples': 
             - 'Ncreators/javascript/examples/index.md'
             - 'Executing tasks': 'Ncreators/javascript/examples/tasks.md'
@@ -99,7 +100,7 @@ nav:
       - 'Provider basic configuration': 'providers/config.md'
       - 'Provider configuration options': 'providers/config2.md'
       - 'Provider FAQ': 'providers/provider-faq.md'
-      - 'Provider troubleshooting': 'providers/trouble.md'
+      - 'Provider troubleshooting': 'providers/troubleshooting.md'
       - 'Yagna CLI reference': 'providers/reference.md'
     - 'Golem docs migration':
       - 'golem/index.md'

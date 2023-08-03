@@ -14,6 +14,11 @@ This article will go through the process of creating a Dockerfile, building a Do
     * Required to have followed the [gvmkit-build installation](../examples/tools/installing-gvmkit-build.md)
     * Required: an installation of Yagna
 
+
+!!! Note
+    If you don't have Docker installed follow these instructions: https://www.docker.com/products/docker-desktop.
+
+
 ## Creating the Dockerfile
 
 This is the simple `Dockerfile` we are going to use, using the `Debian` base image, creating one volume, and setting the working directory. Simply create a file with the name `Dockerfile`, without any file extension, and paste the following contents:
@@ -149,7 +154,8 @@ We can now create our `index.mjs` requestor file, with the `package: ...` matchi
 
 === "JavaScript/npm"
     **index.mjs**
-    ```mjs
+    
+    ```js
     import { TaskExecutor } from "yajsapi";
     (async () => {
     const executor = await TaskExecutor.create({ package: "28704b5186fb46099b6138e6f1db814a631f6963da456492476d0db9" });
