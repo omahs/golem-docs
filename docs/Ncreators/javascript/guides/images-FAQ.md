@@ -10,7 +10,7 @@ description:
 
 The most important reason for this is to reduce the size of the image being transferred. When converting to `.gvmi` all redundant layers from the Docker image are discarded and the filesystem itself gets compressed using [`squashfs`](https://www.kernel.org/doc/html/latest/filesystems/squashfs.html).
 
-This results in a substantial size difference between the two images. For example, as of the time of writing this answer, the Docker image built as part of [Creating a Docker image](creating-a-docker-image.md) article is about `650 MB` in disk size. After conversion, the resulting `.gvmi` file weighs around `50 MB`. That's a 13x size difference!
+This results in a substantial size difference between the two images. For example, as of the time of writing this answer, the Docker image built as part of [Creating a custom Golem image](../tutorials/image.md) tutorial is about `650 MB` in disk size. After conversion, the resulting `.gvmi` file weighs around `50 MB`. That's a 13x size difference!
 
 But why do we need this? Most importantly, to reduce the setup time for providers downloading a new image. If a provider node does not have the specific image in their cache yet then it will need to download it as the first step to performing some computations.
 
@@ -47,11 +47,11 @@ You can learn more about testing the VM runtime locally in the [Testing a Golem 
 
 ## My application's use case requires large files being processed by the providers. How to best approach this?
 
-This is related to the answer given to ["My VM has run out of storage space"](frequently-asked-questions.md#my-vm-has-run-out-of-storage-space-while-running-why-is-that).
+This is related to the answer given to 'My VM has run out of storage space' topic aboce.
 
 There you are two options here:
 
-1. If the files are **static** (that is: they are always the same) then you can include them in the VM image itself while building it. You can learn more about that in [Creating a Docker image](creating-a-docker-image.md).
+1. If the files are **static** (that is: they are always the same) then you can include them in the VM image itself while building it. You can learn more about that in [Golem image explained](../guides/golem-images-explained.md).
 2. If the files are **dynamic** (that is: they may differ between task executions) then your best option is to transfer the files from the requestor agent. Make sure you use a **volume directory as the destination**.
 
 ### Do I have to use Golem Factory's image repository to publish my Golem images?

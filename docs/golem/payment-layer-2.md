@@ -44,11 +44,11 @@ Of course, you also need to enable your accounts' sender mode, which is done usi
 
 If you're interested in running a requestor on the Polygon Ethereum mainnet, to be able to leverage the main pool of Golem providers, please refer to:
 
-[Using Golem on the mainnet](using-golem-on-mainnet.md)
+[Using Golem on the mainnet](./mainnet_intro.md)
 
 Please also see how you can send GLM tokens from the Ethereum Mainnet to Polygon and vice versa:
 
-[GLM  mainnet polygon conversion](glm-mainnet-polygon-conversion.md)
+[GLM  mainnet polygon conversion](./conversion.md)
 
 ## Further reading
 

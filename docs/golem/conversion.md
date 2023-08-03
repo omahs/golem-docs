@@ -29,15 +29,15 @@ Whatever your need, there may come a time when you'd like to send your GLMs one 
 
 **(Use the Deposit Tab)**
 
-![](<../.gitbook/assets/2 (1) (1) (1) (1).png>)
+![](missing_png_deposit.png)
 
 4. Go through the confirmation process
 
-![](../.gitbook/assets/full2.png)
+![](missing_png_confirmation.png)
 
 5. Wait until the process is finished (it normally takes around 7-8 minutes) > you can click "View on Etherscan" to see the status of the transaction
 
-![](../.gitbook/assets/12.png)
+![](missing_png_etherscan.png)
 
 ## Polygon to Ethereum Mainnet
 
@@ -45,7 +45,7 @@ Whatever your need, there may come a time when you'd like to send your GLMs one 
 
 **(Use the Withdraw Tab)**
 
-![](../.gitbook/assets/fullb1.png)
+![](](missing_png_withdraw.png))
 
 **NOTE** : The above screenshot is missing the very last step because of the high gas fee ($60). Just press confirm, sign the transaction in your metamask wallet and it's done.
 
@@ -60,9 +60,9 @@ Just like any transactions on the Ethereum Mainnet require ETH, operations on th
 1. Go to "Swap for Gas Token" -> [https://wallet.polygon.technology/gas-swap](https://wallet.polygon.technology/gas-swap)
 2. Choose the required amount (Minimum = 1 MATIC) and follow the instructions (See the image below)
 
-![](../.gitbook/assets/fulla2.png)
+![](](missing_png_swap_1.png))
 
-3. You can check how much MATIC you have using the "Assets on Polygon" tab![](<../.gitbook/assets/polygon-wal (1).png>)
+3. You can check how much MATIC you have using the "Assets on Polygon" tab![](](missing_png_swap_2.png))
 
 !!! Info
 Just for reference, currently (as of March 23rd, 2022), the transaction fees for an ERC-20 transfer on Polygon oscillate around slightly above 0.001 MATIC so converting even the minimal value of 1 MATIC will get you enough to pay gas fees of hundreds of GLM transfers.

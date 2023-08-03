@@ -97,7 +97,7 @@ yagna payment init
 
 !!! info
 
-    You can learn more about Golem architecture, production and test networks, GLM tokens [here](missinglink.md):
+    You can learn more about Golem architecture, production and test networks, GLM tokens [here](missinglink-info-on-networks.md):
 
 Next steps:
 

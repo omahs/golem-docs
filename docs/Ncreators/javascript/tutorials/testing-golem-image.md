@@ -137,7 +137,7 @@ Success! Our input data is there and can be read by the VM.
 
 Once you're done debugging or want to restart the VM, press `Ctrl+D` while in the debugger prompt.
 
-Having issues? Make sure to take a look at our [VM runtime FAQ](../../guides/images-FAQ.md).
+Having issues? Make sure to take a look at our [VM runtime FAQ](../guides/images-FAQ.md).
 
 ## Summary
 
