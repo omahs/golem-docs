@@ -6,6 +6,18 @@ Description: Guides to help you troubleshoot a faulty provider.
 
 # Provider Troubleshooting
 
+## Provider installer on Ubuntu exits without an error but doesn't run.
+
+If you run the Golem Provider one-line installer on a minimal install of Ubuntu and it completes without error but doesn't run then you might have a symlink issue.
+
+Solution: See this [guide](https://geekrewind.com/setup-and-manage-symlinks-on-ubuntu-18-04-16-04/) on setting up and managing Simlinks.
+
+## Connectivity issue
+
+If you are not receiving tasks at all, has correct subnet configured, resonable prices set for using you HW, and VM valid, the most probable cause is yagna "connectivity" issue.
+
+Solution: Kill and restart the process
+
 ## Invalid VM
 
 In case the `golemsp status` command returns a status other than `valid`:

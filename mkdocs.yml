@@ -31,6 +31,7 @@ nav:
             - 'Working with/evaluating results': 'Ncreators/javascript/examples/results.md'
             - 'Selecting providers': 'Ncreators/javascript/examples/demands.md'
             - 'Working with images': 'Ncreators/javascript/examples/images.md'
+            - 'Switching to mainnet': 'Ncreators/javascript/examples/mainnet.md'
           - 'Guides': 
             - 'Ncreators/javascript/guides/index.md'
             - 'Task Model ': 'Ncreators/javascript/guides/task-model.md'

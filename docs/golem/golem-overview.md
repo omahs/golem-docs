@@ -2,9 +2,7 @@
 Description: Solution architecture and details.
 ---
 
-# Golem overview
-
-## Golem architecture
+## Golem overview
 
 ![](../.gitbook/assets/tutorial-06%20%281%29.jpg)
 
@@ -27,9 +25,13 @@ In exchange for the resources sharing you will receive payment in GLM, and the p
 
 To become a provider one needs to install a provider agent - a specific piece of code that implements the Golem network protocol, thus the machine running it acts as a Golem node. Golem Factory provides the provider binaries as a pre-built Linux installation package. You do not need to perform any development or extensive configuration to have a Golem provider up and running on your Linux machine.
 
-![](../.gitbook/assets/tnm-docs-infographics-02.jpg)
+Providers are recommended to upgrade their nodes to the latest package version available. This strategy shall provide the widest market coverage and therefore ensure the highest probability of profit.
+
+Next Steps:
 
 Provider installation and configuration instructions are [here](../providers/install.md).
+
+[Provider upgrade instructions](../providers/missinglink-providerupgrade.md).
 
 You can read more on how the provider works [here](provider.md).
 

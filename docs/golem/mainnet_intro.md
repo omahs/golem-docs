@@ -9,5 +9,3 @@ Document to be migrated from handbook TOC:
 [Payments](./payments-explained.md)
 
 [Payments layer 2](./payment-layer-2.md)
-
-[Moving to mainnet into](./mainnet_intro.md)

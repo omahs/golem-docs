@@ -95,6 +95,18 @@ $ golemsp status
 └─────────────────────────┴──────────────────────────────────────────────┴─────────────────────────────┘
 ```
 
+## Port forwarding
+
+Yagna daemon is using the UDP protocol on port 11500 for communication. 
+To help Golem Network grow and become more resilient and stable it needs more nodes with public IP addresses.
+Nodes with an IP address offer better network performance and are more attractive for Requestors. 
+If you want to help and at the same time improve communication of your node with the Golem Network you need to manually open the port on router and set up port forwarding. 
+
+For router specific instructions on how to forward your ports go to [https://portforward.com/](https://portforward.com/). To check if your ports are forwarded correctly you can use [https://canyouseeme.org/](https://canyouseeme.org/).
+
+If port forwarding doesn't work, you may need to call your ISP to change settings on your router. 
+
+
 !!! golem-icon "Next steps:"
 
     [Provider configuration in CLI](config.md){ .md-button .md-button--primary }
