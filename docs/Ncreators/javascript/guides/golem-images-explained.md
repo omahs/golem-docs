@@ -25,8 +25,6 @@ See our [Create Golem Image Tutorial](#custom-golem-image-step-by-step-tutorial)
 
 Once your image is built and tested you can push it to a remote repository so that it becomes available to providers within the Golem network. Golem Factory manages a freely-accessible repository that everybody can push into without any special requirements. 
 
-While all code samples, libraries, and tools use the Golem-managed image repo as default, it is not mandatory to use it - developers may publish their Golem images under any publicly accessible URL.
-
 
 ## Golem image use
 
