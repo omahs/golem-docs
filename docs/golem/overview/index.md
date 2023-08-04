@@ -1,10 +1,9 @@
 ---
 Description: Solution architecture and details.
+Title: Golem overview
 ---
 
 ## Golem overview
-
-![](../.gitbook/assets/tutorial-06%20%281%29.jpg)
 
 Golem is a network of nodes that implement the Golem network protocol. We provide the default implementation of such a node in the form of the Golem daemon, called [Yagna](https://github.com/golemfactory/yagna).
 
@@ -17,7 +16,7 @@ The diagram above shows the architecture of the network. For the sake of simplic
 
 __Provider__ is a node that is sharing its temporarily unused computer resources for Requestors within the Golem network in return for GLM tokens.
 
-In general, almost any computer might act as a provider. It can be a laptop, desktop, or server machine. The particular resource details \(for example, the number of CPUs or its memory limit\) that are subject to sharing can be configured by the hardware owner.
+In general, almost any computer might act as a provider. It can be a laptop, desktop, or server machine. The particular resource details (for example, the number of CPUs or its memory limit) that are subject to sharing can be configured by the hardware owner.
 
 Resources can be utilized in different scenarios: it might be a computation requiring heavy lifting right away but it could be also maintaining a service up and running and ready to serve requests coming from requestors whenever they come. 
 
@@ -31,7 +30,7 @@ Next Steps:
 
 Provider installation and configuration instructions are [here](../providers/install.md).
 
-[Provider upgrade instructions](../providers/missinglink-providerupgrade.md).
+[Provider upgrade instructions](../../providers/config-options.md).
 
 You can read more on how the provider works [here](provider.md).
 
@@ -42,7 +41,7 @@ __Requestor__ is a node that wants to use hardware resources that are available 
 The main or most typical benefit for the requestor is to have instant access to a very large pool of hardware. Instead of using local hardware, the requestor can use the IT resources available on the decentralized market. What's more one requestor can use the hardware from many providers at the same time.
 
 
-You can read more on how the requestor works [here](missinglink_requestor_arch.md).
+You can read more on how the requestor works [here](requestor.md).
 
 ### How do Requestors and Providers interact?
 
@@ -62,7 +61,7 @@ The whole process is handled by Golem software Yagna and SDK.
 
 The last step in the interactions is a payment between requestors and providers for the usage of the resources. There are many possible payment scenarios. Currently, the default is to use the [Polygon](https://polygon.technology/), a Layer2 solution that greatly improves cost-effectiveness. However, a user can also opt to use the Ethereum mainnet, should they wish to do so.
 
-More on payment process you can find [here](missinglink-payment-details.md).
+More on payment process you can find [here](../payments/index.md).
 
 
 

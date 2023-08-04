@@ -8,7 +8,7 @@ nav:
         - 'quickstarts/index.md'
         - 'Golem in a Browser': 'Ncreators/javascript/quickstart/web_browser_qs.md'
         - '"no-code" app deployment': 'quickstarts/no_code_quickstart.md'
-    - 'Create on Golem N':
+    - 'Create on Golem':
       - 'Ncreators/index.md' 
       - JavaScript:
           - 'Ncreators/javascript/index.md'
@@ -23,12 +23,12 @@ nav:
             - 'Running Golem from browser': 'Ncreators/javascript/tutorials/web.md'
             - 'Building custom image': 'Ncreators/javascript/tutorials/image.md'
             - 'Testing Golem Images': 'Ncreators/javascript/tutorials/testing-golem-image.md'
-          - 'JS TASK API Examples': 
+          - 'JS Task API Examples': 
             - 'Ncreators/javascript/examples/index.md'
             - 'Executing tasks': 'Ncreators/javascript/examples/tasks.md'
             - 'Defining tasks': 'Ncreators/javascript/examples/commands.md'
             - 'Sending data': 'Ncreators/javascript/examples/data.md'
-            - 'Working with/evaluating results': 'Ncreators/javascript/examples/results.md'
+            - 'Working with results': 'Ncreators/javascript/examples/results.md'
             - 'Selecting providers': 'Ncreators/javascript/examples/demands.md'
             - 'Working with images': 'Ncreators/javascript/examples/images.md'
             - 'Switching to mainnet': 'Ncreators/javascript/examples/mainnet.md'
@@ -53,48 +53,6 @@ nav:
           - 'Creating Golem dApps': 'Ncreators/dapps/creating-golem-dapps.md'
           - 'Differences between Docker containers and Golem VM runtime': 'Ncreators/dapps/docker-containers-vs-golem-vms.md'
           - Troubleshooting: 'Ncreators/dapps/troubleshooting.md'
-    - 'Create on Golem':
-      - 'creators/index.md'
-      - JavaScript:
-          - 'creators/javascript/index.md'
-          - Quickstart: 'creators/javascript/quickstart.md'
-          - 'Introduction to Task API':
-            - 'creators/javascript/high-level/index.md'
-            - 'Task Model': 'creators/javascript/high-level/task-model.md'
-            - Examples:
-                - '#0 - Hello World': 'creators/javascript/examples/hello.md'
-                - '#1 - Simple Usage': 'creators/javascript/examples/simple.md'
-                - '#2 - Hashcat on Golem': 'creators/javascript/examples/hashcat.md'
-                - '#3 - Requestor in browser': 'creators/javascript/examples/web.md'
-          - 'Diving deeper with Core API':
-            - 'creators/javascript/mid-level/index.md'
-            - Examples:
-                - '#0 - Hello World': 'creators/javascript/mid-level/examples/hello.md'
-                - '#1 - Requestor in browser': 'creators/javascript/mid-level/examples/web.md'
-          - 'API Reference':
-            - 'creators/javascript/docs/readme.md'
-            - 'Table of Contents': 'creators/javascript/docs/index.md'
-            - 'Classes': 'creators/javascript/docs/classes'
-            - 'Enums': 'creators/javascript/docs/enums'
-            - 'Interfaces': 'creators/javascript/docs/interfaces'
-            - 'Modules': 'creators/javascript/docs/modules'
-      - 'Golem images':
-          - 'creators/gvmi/golem-images-explained.md'
-          - Examples:
-              - 'Converting an image': 'creators/gvmi/examples/converting-an-image.md'
-              - 'Installing gvmkit-build': 'creators/gvmi/examples/installing-gvmkit-build.md'
-              - 'Pushing to registry': 'creators/gvmi/examples/pushing-to-registry.md'
-              - 'Using an image': 'creators/gvmi/examples/using-golem-image.md'
-          - Tutorial:
-              - 'Tutorial': 'creators/gvmi/tutorial/tutorial.md'
-      - 'Decentralized apps on Golem':
-          - 'creators/dapps/index.md'
-          - Quickstart: 'creators/dapps/run-a-dapp.md'
-          - 'Hello World dApp': 'creators/dapps/hello-world-dapp.md'
-          - 'Managing multiple dApps': 'creators/dapps/dapp-manager.md'
-          - 'Creating Golem dApps': 'creators/dapps/creating-golem-dapps.md'
-          - 'Differences between Docker containers and Golem VM runtime': 'creators/dapps/docker-containers-vs-golem-vms.md'
-          - Troubleshooting: 'creators/dapps/troubleshooting.md'
     - 'Share and Earn':
       - 'providers/index.md'
       - 'Provider installation': 'providers/install.md'
@@ -103,8 +61,17 @@ nav:
       - 'Provider FAQ': 'providers/provider-faq.md'
       - 'Provider troubleshooting': 'providers/troubleshooting.md'
       - 'Yagna CLI reference': 'providers/reference.md'
-    - 'Golem docs migration':
+    - 'General Info':
       - 'golem/index.md'
+      - 'Terms': 'golem/terms.md'
+      - 'Golem Overview': 
+        - 'golem/overview/index.md'
+        - 'Provider': 'golem/overview/provider.md'
+        - 'Requestor': 'golem/overview/requestor.md'
+      - 'Payments': 
+        - 'golem/payments/index.md'
+        - 'Layer 2 Payments': 'golem/payments/payment-layer-2.md'
+        - 'Golem token conversion': 'golem/payments/conversion2.md'
 markdown_extensions:
   - admonition
   - attr_list

@@ -1,21 +1,11 @@
-Document to be migrated from handbook TOC:
+In this section you will find:
 
-[Golem overview](./golem-overview.md)
+* Information on the Terms,  User Interaction Guidelines and Privacy policy [Terms](./terms.md)
 
-[Provider](provider.md)
+* Overview of the Golem network architecture [Golem overview](./golem-overview.md) with explanation of Provider and Requestor concepts.
 
-[Requestor](requestor.md)
+* Explanations of how the [Payments](./payments-explained.md) are made, why we recommend using layer 2 solutions as a payment platform, and instructions on how to convert GLM between Ethereum Mainnet and Polygon Network.
 
-[Payments](./payments-explained.md)
 
-[Payments layer 2](./payment-layer-2.md)
 
-[Moving to mainnet intro](./mainnet_intro.md)
 
-[Your Golem wallet](./your-golem-wallet.md)
-
-[Backup of your wallet](./wallet-backup.md)
-
-[Restoring your wallet](./wallet-restore.md)
-
-[GLM conversion](./conversion.md)

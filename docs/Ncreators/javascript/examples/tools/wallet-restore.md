@@ -45,7 +45,7 @@ On the other hand, if the message reads: `isLocked: false`, it means that you're
 yagna id update --set-default 0x-the-address
 ```
 
-**2. STOP YOUR YAGNA DAEMON**
+**2. Stop your Yagna daemon**
 
 (Just press Ctrl-C in the console that's running `yagna service run` and wait for the daemon to exit)
 

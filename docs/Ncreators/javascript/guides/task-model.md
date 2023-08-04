@@ -7,36 +7,36 @@ Description: Introduction to Golem Network and Task model
 
 ## Golem Network
 
-Golem Network is a p2p network that consists of many nodes. Each node is a system with a __Yagna__ demon running on it. The nodes that offer their resources to others are called __providers__. The nodes that hire resources are called __requestors__.
+Golem Network is a p2p network that consists of many nodes. Each node is a system with a __Yagna__ daemon running on it. The nodes that offer their resources to others are called __providers__. The nodes that hire resources are called __requestors__.
     
-To get things done (the Job) in the Network, you need to define it, split it into your task(s), and send it to the network using the Yagna demon. This is done using a __requestor script__ (or simply __Golem app__) that will utilize Golem JS SDK. You also need to define the environment used to run your activity on a provider, it is done by a software package in the form of an __image__. 
+To get things done (the Job) in the Network, you need to define it, split it into task(s), and send it to the network using the Yagna demon. This is done using a __requestor script__ (or simply __Golem app__) that will utilize Golem JS SDK. You also need to define the environment used to run your activity on a provider, it is done by a software package in the form of a Docker-like __image__. 
 
 Let's get familiar with other terms that will help you navigate through Golem docs and find relevant information more easily.
 
-A most simple operation, like running a command or sending a file, is called a __command__ or a __step__.
-We __compose__ tasks from commands (sometimes we __define__ them by commands).
-Tasks are __executed__ on __providers__ aka __remote computers__ aka __nodes__.
+A most simple operation, like running a command or sending a file, is called a __command__
+We __compose__ tasks from commands.
+Tasks are __executed__ on __providers__ aka __remote computers__.
 
 So, to run your app on Golem Network you need:
 
 * A Yagna demon that will let you connect to the Golem Network.
-* [Image](../guides/golem-images-explained.md), that constitutes an environment in which you will run your commands.
+* A Docker-like [Image](../guides/golem-images-explained.md), that constitutes an environment in which you will run your commands.
 * A [requestor script](../guides/golem-images-explained.md), in which you will define tasks and execute them.
 
-The script will use Task API provided by yajsapi lib, so let’s get familiar with the Task model.
+The script will use Task API provided by JS SDK lib, so let’s get familiar with the Task model.
 
 
 ## Task model
 
-You can use the Golem Network resources to do a Job. A simple Job is just a single task that you want to execute on the remote computer. In fact to take full advantage of the network you should split your Job into many Tasks.
+You can use the Golem Network resources to do a Job. A simple Job is just a single Task that you want to execute on the remote computer. In fact to take full advantage of the network you should split your Job into many Tasks.
     
-A single task will be run on a single provider. If you can divide your Job into many smaller independent fragments - they will be processed in parallel on multiple providers. The Task API will spawn them on available providers for you.
+A single Task will be run on a single provider. If you can divide your Job into many smaller independent fragments - they will be processed in parallel on multiple providers. The Task API will spawn them on available providers for you.
 
-Tasks are defined as functions that implement Worker Interface. Each task function may be a single command (like: `echo “Hello World”``) but may consist of multiple, separate steps, including sending files to and from the provider to your local machine. We provide examples showing the usage of API in different scenarios.
+Tasks are defined as functions that implement Worker Interface. Each task function may be a single command (like: `echo “Hello World”``) but may consist of multiple, separate steps, including sending files to and from the provider. We provide examples showing the usage of API in different scenarios.
 
-Tasks are run in the context that is defined by an image. In our examples, we use Golem standard images, but we also provide tutorials on how to prepare your image.
+Tasks are run in the context that is defined by an image. Images are defined using Dockerfiles and then converted to Golem format using Golem provided tool. In our examples, we use Golem standard images, but we also provide tutorials on how to prepare your image.
 
-## Main Tasks API features:
+## Main Task API features:
 
 !!! info
 
@@ -47,7 +47,7 @@ Tasks are run in the context that is defined by an image. In our examples, we us
 Task executor may run:
 
 * a single task on a single provider (`.run()` method). 
-* multiple tasks on available providers (`.map()` and `.forEach()` methods). The maximum number of concurrently engaged providers is defined by the user; providers can be engaged more than once, until all tasks are executed.
+* multiple tasks on available providers (`.map()` and `.forEach()` methods). The maximum number of concurrently engaged providers is defined by the user; providers can be engaged more than once until all tasks are executed.
 * An initializing command runs once per engaged provider (`.beforeEach()`). It allows for the preparation of workers before processing the main batch of tasks.
 
 Users can also define the maximum number of concurrently engaged providers (`maxParallelTasks` parameter).
@@ -66,7 +66,7 @@ Tasks are defined by task functions. The simplest function contains just a singl
 
 See examples [here](../examples/commands.md).   
 
-### Sending Data to and from Providers
+### Sending data to and from providers
 
 Users can send:
 
@@ -82,8 +82,8 @@ See examples [here](../examples/data.md).
 
 Each command (run, uploadFile) produces a result object that contains stdout, stderr of the respective step run. Users can use this output to manage program flow.
 
-The way you can process results depends on method  you compose tasks and how tasks are composed. 
-It also defines how the potential failures on the provider side arew handled by the JS SDK .
+The way you can process results depends on the method you compose tasks and how tasks are composed. 
+It also defines how the potential failures on the provider side are handled by the JS SDK.
 
 See examples [here](../examples/results.md).    
   

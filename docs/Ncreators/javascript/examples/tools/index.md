@@ -7,7 +7,10 @@ Instructions on how to use Golem tools
 | Topic     |    Content    |
 |:----------:|:---------------------------------------------|
 |[Yagna installation for requestors](install_yagna.md) | Simple instructions on how to install Yagna daemon and become part of the Golem Network |
-|[Converting Docker image to Golem format](converting-an-image.md) | Instructions how to convert Docker image into Golem format   |
+|[Managing Golem wallet](./your-golem-wallet.md) | Instructions on how to check your wallet address, monitor status, enable payments on the main network, and obtain test token |
+|[Backup Golem wallet](./wallet-backup.md) | Procedure the backup and secure your Golem wallet |
+|[Restoring Golem wallet](./wallet-restore.md) | Procedure the restore your wallet after new Yagna installation |
+|[Converting Docker image to Golem format](converting-an-image.md) | Instructions on how to convert Docker image into Golem format   |
 |[Gvmkit-build installation (image conversion tool)](installing-gvmkit-build.md) | How to install the tool that can convert Docker image into Golem format (+ instructions on how to run it without installation) |
 |[Publishing custom images](publishing.md)| Information on how to make your image available for providers: both "hash" and "tag" naming conventions covered.   |
 

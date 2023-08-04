@@ -7,11 +7,11 @@ Description: Learn what a Golem image is and how to create and use one
 
 ## Golem Image
 
-A Golem image is a software package that contains tools, libraries, tools, configurations, dependencies, and settings that are required to execute your tasks on a remote computer. The image is used to create the environment (VM) where your tasks are executed.
+A Golem image is a software package that contains libraries, tools, configurations, dependencies, and settings that are required to execute your tasks on a remote computer. The image is used to create the environment (VM) where your tasks are executed.
 
 ## Golem image creation 
 
-Golem images are based on Docker images that are converted using the gvmkit-build tool to a `.gvmi` file format. The reason for using a specific Golem image format is to save file space and speed up the transfer speeds of the images.
+Golem images are based on Docker images that are converted using the gvmkit-build tool to a `.gvmi` file format. The conversion brings a visible advantage for users. By using SquashFS we significantly reduced the size of the images thus saving file space and shortening the time needed to transfer the image to the provider node. Another benefit is running images in VMs instead of running them as Docker containers, which provides a separation of providers and requestor data and processes.
 
 The general process of creating a Golem image looks like this:
 
@@ -23,7 +23,7 @@ See our [Create Golem Image Tutorial](#custom-golem-image-step-by-step-tutorial)
 
 ## Publishing the image
 
-Once your image is built and tested you can push it to a remote repository so that it becomes available to providers within the Golem network. Golem Factory manages a freely-accessible repository that everybody can push into without any special requirements. 
+Once your image is built and tested you can push it to a remote repository so that it becomes available to providers within the Golem Network. Golem manages a freely-accessible repository that everybody can push into without any special requirements. 
 
 
 ## Golem image use
